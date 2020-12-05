@@ -1,9 +1,9 @@
 # Web-Scraper-CS50-Final-Project
 
 
-Project Name: Morning Briefing
+Project Name: Finacne Data Dashboard
 
-Background: As a treasury professional, I conduct a briefing every morning to traders explaining events happening in the market.
+Background: As part of my job, I am required gather market/economic data.
 I have to search for 4 key data points and its movements which are S&P500, USDMYR,US 10 Year Treasury Yield and FBMKLCI. 
 I then have to explain some key market news happening last night. 
 
