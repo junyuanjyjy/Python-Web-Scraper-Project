@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    news
+{% endblock %}
+
+{% block main %}
+<h2 align="center">Top Headlines</h2>
+{% for i in range(0, len) %}
+<p> <a href={{yu[i]}}>{{head[i]}}</a></p>
+{% endfor %}
+{% endblock %}
