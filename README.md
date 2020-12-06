@@ -1,7 +1,7 @@
 # Web-Scraper-CS50-Final-Project
 
 
-Project Name: Finacne Data Dashboard
+Project Name: Finance Data Dashboard
 
 Background: As part of my job, I am required gather market/economic data.
 I have to search for 4 key data points and its movements which are S&P500, USDMYR,US 10 Year Treasury Yield and FBMKLCI. 
