@@ -1,4 +1,4 @@
-# Web-Scraper-CS50-Final-Project
+# Web-Scraper-Project
 
 
 Project Name: Finance Data Dashboard
