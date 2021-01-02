@@ -21,8 +21,9 @@ def index():
         x = bs.BeautifulSoup(i,'html5lib')
         v.append(x)
 
-    clas = "div span[data-reactid*='14']"
-    cla = "div span[data-reactid*='16']"
+    clas = "div span[class='Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)']"
+    cla = "div span[class='Trsdu(0.3s) Fw(500) Pstart(10px) Fz(24px) C($positiveColor)']"
+    cla2 = "div span[class='Trsdu(0.3s) Fw(500) Pstart(10px) Fz(24px) C($negativeColor)']"
 
     quotes = []
     movements = []
@@ -31,9 +32,11 @@ def index():
         x = bs.BeautifulSoup(i,'html5lib')
         quote = x.select(clas)[0].text
         quotes.append(quote)
-        movement = x.select(cla)[0].text
+        try:
+            movement = x.select(cla)[0].text
+        except:
+            movement = x.select(cla2)[0].text
         movements.append(movement)
-
     return render_template("index.html",quotes=quotes,movements=movements,title=title,len=len(title))
 
 @app.route("/news")
@@ -44,8 +47,11 @@ def news():
     edge = bs.BeautifulSoup(source,'html5lib')
     head =[]
     yu = []
+    stop = ['\n\n','\n\n(Updated)\n']
     for link in edge.find_all('div', class_='post-title'):
         head.append(link.text)
-        yu.append(q + link.a.get('href'))
-
-    return render_template("news.html",head=head,yu=yu,len=5)
+        for k in link.find_all('a'):
+            yu.append(q + k['href'])
+    head = head[1:]
+    head = [word for word in head if word not in stop]
+    return render_template("news.html",head=head,yu=yu,len=10)
